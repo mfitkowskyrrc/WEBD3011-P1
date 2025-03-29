@@ -1,0 +1,14 @@
+<h1>Pokemon Trainer Reference Guide</h1>
+<nav>
+  <%= link_to 'All Trainers', trainers_path%>
+  <%= link_to 'All Pokemon', pokemons_path%>
+</nav>
+
+<body>
+  <h1>Dataset Description</h1>
+  <p>I'm using two sources of data in this project. The first is the <a href="https://pokeapi.co/">PokeAPI</a>, which provides details about Pokémon such as their names, numbers, abilities, types, height, and weight in a simple JSON format.</p>
+  <p>The second source is Faker, which generates realistic fake data for Pokémon trainers, including names, heights, weights, and ages.</p>
+  <h2>How They Work Together</h2>
+  <p>Each trainer created with Faker is assigned a set of Pokémon fetched from the PokeAPI. In my database, I have two tables: one for trainers and one for Pokémon. The Pokémon table includes a link to the trainer they belong to, connecting the two datasets.</p>
+  <p>This setup allows me to simulate a world where trainers have teams of Pokémon, combining actual Pokémon data with randomly generated trainer profiles.</p>
+</body>

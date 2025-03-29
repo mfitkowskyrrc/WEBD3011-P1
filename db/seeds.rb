@@ -20,8 +20,8 @@ Pokemon.destroy_all
     Pokemon.create!(
       name: pokemon_data.name.capitalize,
       dex_number: pokemon_data.id,
-      abilities: pokemon_data.abilities.map { |a| a.ability.name }.join(', '),
-      pokemon_type: pokemon_data.types.map { |t| t.type.name }.join(', '),
+      abilities: pokemon_data.abilities.map { |a| a.ability.name.capitalize }.join(', '),
+      pokemon_type: pokemon_data.types.map { |t| t.type.name.capitalize }.join(', '),
       height: pokemon_data.height,
       weight: pokemon_data.weight,
       trainer_id: trainer.id
