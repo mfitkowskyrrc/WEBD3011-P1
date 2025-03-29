@@ -5,4 +5,6 @@ class Pokemon < ApplicationRecord
 
   validates :name, presence: true
   validates :dex_number, presence: true
+
+  paginates_per 20
 end

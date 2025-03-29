@@ -2,6 +2,8 @@
 
 <% content_for :title, "Trainers" %>
 
+<%= paginate @trainers %>
+
 <div id="trainers">
   <% @trainers.each do |trainer| %>
     <%= render trainer %>
@@ -11,4 +13,7 @@
   <% end %>
 </div>
 
+<%= paginate @trainers %>
+
 <%= link_to "New trainer", new_trainer_path %>
+

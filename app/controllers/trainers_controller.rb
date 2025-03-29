@@ -3,7 +3,7 @@ class TrainersController < ApplicationController
 
   # GET /trainers or /trainers.json
   def index
-    @trainers = Trainer.all
+    @trainers = Trainer.order(:name).page(params[:page])
   end
 
   # GET /trainers/1 or /trainers/1.json
