@@ -15,8 +15,11 @@
   </p>
 
   <p>
-    <strong>Type:</strong>
-    <%= pokemon.pokemon_type %>
+    <strong>Types:</strong>
+
+    <% pokemon.poke_types.each do |type| %>
+        <%= type.name.capitalize %><%= ', ' unless type == pokemon.poke_types.last %>
+    <% end %>
   </p>
 
   <p>

@@ -8,6 +8,7 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons/1 or /pokemons/1.json
   def show
+    @pokemon = Pokemon.find(params[:id])
   end
 
   # GET /pokemons/new
@@ -65,6 +66,6 @@ class PokemonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pokemon_params
-      params.expect(pokemon: [ :name, :dex_number, :abilities, :type, :height, :weight ])
+      params.expect(pokemon: [ :name, :dex_number, :abilities, :height, :weight ])
     end
 end
