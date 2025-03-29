@@ -3,6 +3,17 @@
 <%= render @trainer %>
 
 <div>
+  <h1>Pokemon Partners</h1>
+  <% pokemon_partners = Pokemon.where(trainer_id: @trainer.id) %>
+  <% pokemon_partners.each do |pokemon| %>
+    <div>
+      <h3><%= link_to pokemon.name, pokemon  %></h3>
+    </div>
+
+  <% end %>
+</div>
+
+<div>
   <%= link_to "Edit this trainer", edit_trainer_path(@trainer) %> |
   <%= link_to "Back to trainers", trainers_path %>
 
