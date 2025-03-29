@@ -2,13 +2,18 @@
 
 <% content_for :title, "Trainers" %>
 
-<%= form_with url: trainers_path, method: :get, local: true do %>
-  <%= label_tag :search, "Search Trainers:" %>
-  <%= text_field_tag :search, params[:search], placeholder: "Name or Trainer ID" %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<%= paginate @trainers %>
+<div class="row" >
+  <div class="col">
+    <%= paginate @trainers %>
+  </div>
+  <div class="col">
+    <%= form_with url: trainers_path, method: :get, local: true do %>
+      <%= label_tag :search, "Search Trainers:" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Name or Trainer ID" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+</div>
 
 <div id="trainers">
   <% if @trainers.any? %>
