@@ -1,22 +1,23 @@
-<div id="<%= dom_id trainer %>">
-  <h1>
-    <strong>Name:</strong>
-    <%= trainer.name %>
-  </h1>
+<div id="<%= dom_id trainer %>" class="card">
+  <div class="card-body">
+    <h2 class="card-header">
+      <strong><%= link_to trainer.name, trainer %></strong>
+    </h2>
+    <p>
+      <strong>Height:</strong>
+      <%= trainer.height %>
+    </p>
 
-  <p>
-    <strong>Height:</strong>
-    <%= trainer.height %>
-  </p>
+    <p>
+      <strong>Weight:</strong>
+      <%= trainer.weight %>
+    </p>
 
-  <p>
-    <strong>Weight:</strong>
-    <%= trainer.weight %>
-  </p>
+    <p>
+      <strong>Age:</strong>
+      <%= trainer.age %>
+    </p>
+  </div>
 
-  <p>
-    <strong>Age:</strong>
-    <%= trainer.age %>
-  </p>
 
 </div>

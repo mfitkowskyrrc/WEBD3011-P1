@@ -1,41 +1,41 @@
-<div id="<%= dom_id pokemon %>">
-  <h3>
-    <strong>Name:</strong>
-    <%= pokemon.name %>
-  </h3>
+<div id="<%= dom_id pokemon %>" class="card">
+  <div class="card-body">
+    <h2 class="card-header">
+      <strong><%= link_to pokemon.name, pokemon %></strong>
+    </h2>
 
-  <p>
-    <strong>Trainer:</strong>
-    <% trainer = Trainer.find(pokemon.trainer_id) %>
-    <%= link_to trainer.name, trainer %>
-  </p>
+    <p>
+      <strong>Trainer:</strong>
+      <% trainer = Trainer.find(pokemon.trainer_id) %>
+      <%= link_to trainer.name, trainer %>
+    </p>
 
-  <p>
-    <strong>Dex number:</strong>
-    <%= pokemon.dex_number %>
-  </p>
+    <p>
+      <strong>Dex number:</strong>
+      <%= pokemon.dex_number %>
+    </p>
 
-  <p>
-    <strong>Abilities:</strong>
-    <%= pokemon.abilities %>
-  </p>
+    <p>
+      <strong>Abilities:</strong>
+      <%= pokemon.abilities %>
+    </p>
 
-  <p>
-    <strong>Types:</strong>
+    <p>
+      <strong>Types:</strong>
 
-    <% pokemon.poke_types.each do |type| %>
-        <%= type.name.capitalize %><%= ', ' unless type == pokemon.poke_types.last %>
-    <% end %>
-  </p>
+      <% pokemon.poke_types.each do |type| %>
+          <%= type.name.capitalize %><%= ', ' unless type == pokemon.poke_types.last %>
+      <% end %>
+    </p>
 
-  <p>
-    <strong>Height:</strong>
-    <%= pokemon.height %>
-  </p>
+    <p>
+      <strong>Height:</strong>
+      <%= pokemon.height %>
+    </p>
 
-  <p>
-    <strong>Weight:</strong>
-    <%= pokemon.weight %>
-  </p>
-
+    <p>
+      <strong>Weight:</strong>
+      <%= pokemon.weight %>
+    </p>
+  </div>
 </div>

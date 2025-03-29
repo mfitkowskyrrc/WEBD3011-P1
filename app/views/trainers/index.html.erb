@@ -19,7 +19,6 @@
   <% if @trainers.any? %>
     <% @trainers.each do |trainer| %>
       <%= render trainer %>
-      <p><%= link_to "Show this trainer", trainer %></p>
     <% end %>
   <% else %>
     <p>No trainers found matching your search criteria</p>

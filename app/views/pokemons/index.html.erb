@@ -19,7 +19,6 @@
   <% if @pokemons.any? %>
     <% @pokemons.each do |pokemon| %>
       <%= render pokemon %>
-      <p><%= link_to "Show this Pokémon", pokemon %></p>
     <% end %>
   <% else %>
     <p>No Pokémon found matching your search criteria.</p>
