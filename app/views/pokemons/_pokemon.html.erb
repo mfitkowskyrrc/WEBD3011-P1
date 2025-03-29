@@ -5,6 +5,12 @@
   </h3>
 
   <p>
+    <strong>Trainer:</strong>
+    <% trainer = Trainer.find(pokemon.trainer_id) %>
+    <%= link_to trainer.name, trainer %>
+  </p>
+
+  <p>
     <strong>Dex number:</strong>
     <%= pokemon.dex_number %>
   </p>
