@@ -3,7 +3,11 @@ class TrainersController < ApplicationController
 
   # GET /trainers or /trainers.json
   def index
-    @trainers = Trainer.order(:name).page(params[:page])
+    if params[:search].present?
+      @trainers = Trainer.search(params[:search]).page(params[:page]).per(10)
+    else
+      @trainers = Trainer.order(:name).page(params[:page])
+    end
   end
 
   # GET /trainers/1 or /trainers/1.json

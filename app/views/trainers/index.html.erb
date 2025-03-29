@@ -2,14 +2,22 @@
 
 <% content_for :title, "Trainers" %>
 
+<%= form_with url: trainers_path, method: :get, local: true do %>
+  <%= label_tag :search, "Search Trainers:" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Name or Trainer ID" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <%= paginate @trainers %>
 
 <div id="trainers">
-  <% @trainers.each do |trainer| %>
-    <%= render trainer %>
-    <p>
-      <%= link_to "Show this trainer", trainer %>
-    </p>
+  <% if @trainers.any? %>
+    <% @trainers.each do |trainer| %>
+      <%= render trainer %>
+      <p><%= link_to "Show this trainer", trainer %></p>
+    <% end %>
+  <% else %>
+    <p>No trainers found matching your search criteria</p>
   <% end %>
 </div>
 

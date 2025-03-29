@@ -2,17 +2,21 @@
 
 <% content_for :title, "Pokemon" %>
 
+<%= form_with url: pokemons_path, method: :get, local: true do %>
+  <%= label_tag :search, "Search Pokémon:" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Pokedex # or Name" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <%= paginate @pokemons %>
 
 <div id="pokemons">
-  <% @pokemons.each do |pokemon| %>
-    <%= render pokemon %>
-    <p>
-      <%= link_to "Show this pokemon", pokemon %>
-    </p>
+  <% if @pokemons.any? %>
+    <% @pokemons.each do |pokemon| %>
+      <%= render pokemon %>
+      <p><%= link_to "Show this Pokémon", pokemon %></p>
+    <% end %>
+  <% else %>
+    <p>No Pokémon found matching your search criteria.</p>
   <% end %>
 </div>
-
-<%= paginate @pokemons %>
-
-<%= link_to "New pokemon", new_pokemon_path %>
