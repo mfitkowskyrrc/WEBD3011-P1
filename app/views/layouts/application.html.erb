@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Intro Project" %></title>
+    <title><%= yield(:title) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -23,6 +23,16 @@
   </head>
 
   <body>
+    <header>
+      <h1><%= yield(:title) %></h1>
+      <nav>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Trainers', trainers_path%></li>
+          <li><%= link_to 'All Pokemon', pokemons_path%></li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
