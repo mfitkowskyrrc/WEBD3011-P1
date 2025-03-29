@@ -1,0 +1,10 @@
+
+<% content_for :title, params[:poke_type_name].capitalize + ' Pokemon' %>
+
+<div class="list-group">
+  <% @pokemons.each do |pokemon| %>
+    <a href="<%= pokemon_path(pokemon) %>" class="list-group-item list-group-item-action">
+      <%= pokemon.name %>
+    </a>
+  <% end %>
+</div>

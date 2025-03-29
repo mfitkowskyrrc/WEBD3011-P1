@@ -1,0 +1,8 @@
+<% content_for :title, "Pokemon Types" %>
+
+<div class="list-group">
+  <% @poke_types.each do |poke_type| %>
+    <a href=<%= poke_types_path(poke_type_name: poke_type.name)  %> class="list-group-item list-group-item-action"><%= poke_type.name %></a>
+  <% end %>
+</div>
+
