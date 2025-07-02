@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem 'poke-api-v2'
-gem 'faker', '~> 3.4', '>= 3.4.2'
+gem 'faker', '~> 3.5'
 gem 'rails-erd'
 gem 'kaminari'
 gem 'search_cop', '~> 1.3'
